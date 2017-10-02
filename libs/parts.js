@@ -194,14 +194,18 @@ exports.extractCSS = function(paths) {
         // Extract CSS during build
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css'),
-          include: paths
+          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')          
+          // loader: ExtractTextPlugin.extract('style', 'css'),
+          // include: paths
         }
       ]
     },
     plugins: [
       // Output extracted CSS to a file
-      new ExtractTextPlugin('[name].[chunkhash].css')
+      // new ExtractTextPlugin('[name].[chunkhash].css')
+      new ExtractTextPlugin('app.css', {
+        allChunks: true
+      })
     ]
   };
 }

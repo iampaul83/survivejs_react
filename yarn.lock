@@ -2496,6 +2496,10 @@ hoek@4.x.x:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.0.tgz#72d9d0754f7fe25ca2d01ad8f8f9a9449a89526d"
 
+hoist-non-react-statics@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -3394,7 +3398,7 @@ lodash@^3.5.0, lodash@^3.8.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.0.1, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.0.1, lodash@^4.16.6, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3426,11 +3430,7 @@ lower-case@^1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
 
-lru-cache@2:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
-
-lru-cache@2.2.x:
+lru-cache@2, lru-cache@2.2.x:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.2.4.tgz#6c658619becf14031d0d0b594b16042ce4dc063d"
 
@@ -3792,6 +3792,10 @@ object-component@0.0.3:
 object-hash@^1.1.4:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.1.8.tgz#28a659cf987d96a4dabe7860289f3b5326c4a03c"
+
+object-unfreeze@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/object-unfreeze/-/object-unfreeze-1.1.0.tgz#69628bea1f3c9d29f4eb0ba63b38002d70ea3ce9"
 
 object.omit@^2.0.0:
   version "2.0.1"
@@ -4436,6 +4440,14 @@ react-addons-perf@^15.1.0:
 react-addons-test-utils@^15.1.0:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.6.2.tgz#c12b6efdc2247c10da7b8770d185080a7b047156"
+
+react-css-modules@^4.7.1:
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/react-css-modules/-/react-css-modules-4.7.1.tgz#08fff65c034780b4352f0a1bb879cab0ee43d820"
+  dependencies:
+    hoist-non-react-statics "^1.2.0"
+    lodash "^4.16.6"
+    object-unfreeze "^1.1.0"
 
 react-deep-force-update@^1.0.0:
   version "1.1.1"

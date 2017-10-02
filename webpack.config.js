@@ -94,11 +94,11 @@ switch(TARGET) {
       common,
       {
         devtool: 'eval-source-map',
-        entry: {
-          style: PATHS.style
-        }
+        // entry: {
+        //   style: PATHS.style
+        // }
       },
-      parts.setupCSS(PATHS.style),
+      parts.extractCSS(PATHS.style),
       parts.devServer({
         // Customize host/port here if needed
         host: process.env.HOST,

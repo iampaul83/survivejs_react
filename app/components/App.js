@@ -1,11 +1,14 @@
 import React from 'react';
 import Notes from './Notes';
 import uuid from 'uuid';
+import CSSModules from 'react-css-modules';
+import styles from './app.css'
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      newTask: '',
       notes: [
         {
           id: uuid.v4(),
@@ -23,17 +26,17 @@ export default class App extends React.Component {
     const { notes } = this.state;
 
     return (
-      <div>
+      <div styleName="container">
         <h1>Hello world</h1>
-        <form onSubmit={this.addNote}>
+        <form onSubmit={this.addNote} styleName="form">
           <input
             type="text"
-            ref={(input) => { this.newTaskInput = input; }}
+            ref={(input) => this.newTaskInput = input}
             value={this.state.newTask}
             onChange={this.newTaskChange} />
           <button>+</button>
         </form>
-        <Notes notes={notes} />
+        <Notes notes={notes} deleteNote={this.deleteNote} />
       </div>
     );
   }
@@ -42,11 +45,14 @@ export default class App extends React.Component {
     event.preventDefault();
     this.newTaskInput.focus()
     this.setState(({ notes, newTask }) => {
+      if (!newTask) {
+        return
+      }
       return {
-        notes: [...notes, {
+        notes: [{
           id: uuid.v4(),
           task: newTask
-        }],
+        }, ...notes],
         newTask: ''
       };
     });
@@ -57,4 +63,14 @@ export default class App extends React.Component {
       newTask: event.target.value
     });
   }
+
+  deleteNote = (id) => {
+    this.setState(({ notes }) => {
+      return {
+        notes: notes.filter((note) => note.id !== id)
+      }
+    });
+  }
 }
+
+export default CSSModules(App, styles);
